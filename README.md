@@ -1,36 +1,49 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Climat Québec — Refonte du site
 
-## Getting Started
+Refonte moderne du site du parti politique québécois **Climat Québec**, construite avec Next.js, React et Tailwind CSS. Le projet propose une nouvelle identité visuelle audacieuse et militante, ancrée dans le territoire québécois (forêt boréale, eau, énergie).
 
-First, run the development server:
+## Deux lignes éditoriales
+
+Le site intègre un **sélecteur de version de contenu** (dans l'en-tête) permettant de basculer entre :
+
+- **Nouvelle ligne (2026)** — positionnement recommandé par une analyse stratégique : slogan « Reprendre nos pouvoirs pour protéger notre monde ».
+- **Ligne actuelle** — reprise fidèle du contenu existant de climat.quebec : « La force de contrer les lobbys ».
+
+La bascule s'opère via un React Context, sans rechargement.
+
+## Fonctionnalités
+
+- 7 pages : Accueil, Notre vision, Nos priorités, Dossiers locaux, Candidats, Agir, Actualités
+- Mode clair / sombre (préférence système + bascule manuelle)
+- Design responsive mobile-first, accessibilité WCAG AA
+- Contenu et données réels (candidatures, résultats électoraux, dossiers) centralisés dans `src/data/content.ts`
+
+## Stack technique
+
+- [Next.js 16](https://nextjs.org/) (App Router, TypeScript)
+- [React 19](https://react.dev/)
+- [Tailwind CSS v4](https://tailwindcss.com/)
+- Typographie via [Fontshare](https://www.fontshare.com/)
+
+## Démarrage
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm install
+npm run dev      # serveur de développement
+npm run build    # build de production
+npm run start    # serveur de production
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Ouvrir [http://localhost:3000](http://localhost:3000).
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Déploiement
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Ce projet est une application Next.js à runtime Node. Déploiement recommandé sur [Vercel](https://vercel.com/).
 
-## Learn More
+## Sources
 
-To learn more about Next.js, take a look at the following resources:
+Contenu et données : [climat.quebec](https://climat.quebec/), [Élections Québec](https://www.electionsquebec.qc.ca/), [Léger](https://leger360.com/), [Assemblée nationale du Québec](https://www.assnat.qc.ca/).
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+---
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Parti autorisé par le DGEQ depuis le 2 août 2021 · Élections générales du 5 octobre 2026.
