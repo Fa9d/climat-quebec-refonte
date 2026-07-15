@@ -1,26 +1,173 @@
 @import "tailwindcss";
 
+/* ==========================================================================
+   Climat Québec — Design system
+   Palette dérivée du territoire québécois :
+   - vert forêt profond (primaire)
+   - vert vif militant (accent CTA)
+   - bleu eau/lac (secondaire)
+   ========================================================================== */
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* Marque */
+  --foret: #0f3d2e;        /* vert forêt profond */
+  --foret-600: #16543f;
+  --foret-400: #2c7a5c;
+  --vif: #2fbf71;          /* vert vif militant (CTA) */
+  --vif-600: #1f9c58;
+  --eau: #1f6f8b;          /* bleu eau/lac */
+  --eau-400: #4a93ad;
+  --creme: #f7f4ec;        /* surface claire crème */
+  --creme-2: #efe9dc;
+
+  /* Tokens sémantiques — MODE CLAIR (défaut) */
+  --background: #f7f4ec;
+  --surface: #ffffff;
+  --surface-2: #efe9dc;
+  --foreground: #14231c;
+  --muted: #4b5a52;
+  --border: rgba(15, 61, 46, 0.14);
+  --primary: var(--foret);
+  --primary-fg: #ffffff;
+  --accent: var(--vif-600);
+  --accent-fg: #06301d;
+  --secondary: var(--eau);
+  --ring: var(--vif-600);
+  --hero-overlay: linear-gradient(
+    180deg,
+    rgba(8, 32, 24, 0.35) 0%,
+    rgba(8, 32, 24, 0.55) 55%,
+    rgba(6, 26, 20, 0.82) 100%
+  );
+}
+
+.dark {
+  /* Tokens sémantiques — MODE SOMBRE (vert-nuit très foncé) */
+  --background: #071811;
+  --surface: #0e2a20;
+  --surface-2: #123425;
+  --foreground: #eaf3ee;
+  --muted: #a8bfb4;
+  --border: rgba(120, 200, 165, 0.16);
+  --primary: #2c7a5c;
+  --primary-fg: #eafff4;
+  --accent: #34d17e;
+  --accent-fg: #04241a;
+  --secondary: #4a93ad;
+  --ring: #34d17e;
+  --hero-overlay: linear-gradient(
+    180deg,
+    rgba(3, 18, 13, 0.45) 0%,
+    rgba(3, 18, 13, 0.66) 55%,
+    rgba(3, 14, 10, 0.9) 100%
+  );
 }
 
 @theme inline {
   --color-background: var(--background);
+  --color-surface: var(--surface);
+  --color-surface-2: var(--surface-2);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-muted: var(--muted);
+  --color-border: var(--border);
+  --color-primary: var(--primary);
+  --color-primary-fg: var(--primary-fg);
+  --color-accent: var(--accent);
+  --color-accent-fg: var(--accent-fg);
+  --color-secondary: var(--secondary);
+  --color-foret: var(--foret);
+  --color-eau: var(--eau);
+  --color-vif: var(--vif);
+  --color-ring: var(--ring);
+
+  --font-display: "Clash Display", ui-sans-serif, system-ui, sans-serif;
+  --font-sans: "Satoshi", ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+
+  --radius-sm: 0.375rem;
+  --radius: 0.75rem;
+  --radius-lg: 1.25rem;
+  --radius-xl: 1.75rem;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+* {
+  border-color: var(--border);
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+/* Display font utility */
+.font-display {
+  font-family: var(--font-display);
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  line-height: 0.98;
+}
+
+/* Focus visible — accessibilité */
+:focus-visible {
+  outline: 3px solid var(--ring);
+  outline-offset: 2px;
+  border-radius: 3px;
+}
+
+::selection {
+  background: var(--vif);
+  color: #06301d;
+}
+
+/* Hero overlay helper */
+.hero-overlay::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: var(--hero-overlay);
+  z-index: 1;
+}
+
+/* Reveal au scroll (respecte prefers-reduced-motion) */
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1),
+    transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+.reveal.is-visible {
+  opacity: 1;
+  transform: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+  * {
+    animation-duration: 0.001ms !important;
+    transition-duration: 0.001ms !important;
+  }
+}
+
+/* Texture subtile de grain pour éviter les aplats plats (asymétrie visuelle) */
+.grain-eau {
+  background-color: var(--eau);
+  background-image: radial-gradient(
+    rgba(255, 255, 255, 0.06) 1px,
+    transparent 1px
+  );
+  background-size: 18px 18px;
 }
