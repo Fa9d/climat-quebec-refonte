@@ -5,6 +5,7 @@ import Link from "next/link";
 import { useVersion } from "@/components/providers";
 import Reveal from "@/components/reveal";
 import { Kicker, StatutBadge, CtaBanner } from "@/components/ui";
+import { assetPath } from "@/lib/asset-path";
 import {
   DOSSIERS,
   CANDIDATS,
@@ -20,7 +21,7 @@ export default function Home() {
       {/* ===================== HERO ===================== */}
       <section className="hero-overlay relative isolate flex min-h-[86vh] items-end overflow-hidden">
         <Image
-          src="/images/hero-territory.webp"
+          src={assetPath("/images/hero-territory.webp")}
           alt="Territoire forestier et lac du Québec, brume matinale sur les collines boisées"
           fill
           priority

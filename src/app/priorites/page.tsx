@@ -4,6 +4,7 @@ import Image from "next/image";
 import { useVersion } from "@/components/providers";
 import Reveal from "@/components/reveal";
 import { Kicker, CtaBanner } from "@/components/ui";
+import { assetPath } from "@/lib/asset-path";
 
 export default function PrioritesPage() {
   const { content } = useVersion();
@@ -59,7 +60,7 @@ export default function PrioritesPage() {
                     }`}
                   >
                     <Image
-                      src={p.image as string}
+                      src={assetPath(p.image as string)}
                       alt={`Illustration — ${p.titre}`}
                       fill
                       sizes="(max-width: 1024px) 100vw, 50vw"

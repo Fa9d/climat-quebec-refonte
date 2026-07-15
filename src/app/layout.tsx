@@ -3,6 +3,7 @@ import "./globals.css";
 import { Providers } from "@/components/providers";
 import Header from "@/components/header";
 import Footer from "@/components/footer";
+import { assetPath } from "@/lib/asset-path";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://climat.quebec"),
@@ -19,7 +20,7 @@ export const metadata: Metadata = {
     locale: "fr_CA",
     type: "website",
     siteName: "Climat Québec",
-    images: ["/images/hero-territory.webp"],
+    images: [assetPath("/images/hero-territory.webp")],
   },
 };
 
