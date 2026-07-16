@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import Reveal from "@/components/reveal";
 import { Kicker } from "@/components/ui";
 import { assetPath } from "@/lib/asset-path";
@@ -178,13 +177,13 @@ export default function AnalysePage() {
           <div className="mt-10 grid gap-10 lg:grid-cols-2">
             {FIGURES.map((f) => (
               <Reveal key={f.src} className="rounded-xl border border-border bg-surface p-4 sm:p-6">
-                <div className="relative aspect-[16/10] w-full overflow-hidden rounded-lg bg-white">
-                  <Image
+                <div className="w-full overflow-hidden rounded-lg bg-white">
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img
                     src={assetPath(f.src)}
                     alt={f.titre}
-                    fill
-                    sizes="(max-width: 1024px) 100vw, 50vw"
-                    className="object-contain"
+                    loading="lazy"
+                    className="aspect-[16/10] w-full object-contain"
                   />
                 </div>
                 <h3 className="mt-4 font-display text-xl text-foreground">{f.titre}</h3>
