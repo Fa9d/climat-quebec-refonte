@@ -1,0 +1,276 @@
+{
+ "partis": {
+  "CAQ": {
+   "specificites_ideologiques": {
+    "ouverture": 13.12,
+    "économie": 9.51,
+    "pme": 9.25,
+    "identité": 7.02,
+    "immigration": 6.47,
+    "clause": 5.46,
+    "laïcité": 5.21,
+    "langue": 5.11,
+    "ministre": 5.01,
+    "dérogatoire": 4.86,
+    "protéger": 4.46,
+    "femme": 3.97,
+    "nation": 3.94,
+    "gouvernement": 3.94,
+    "avance": 3.94,
+    "avenir": 3.88,
+    "leadership": 3.74,
+    "françois": 3.65,
+    "vie": 3.57,
+    "tarifs": 3.28
+   },
+   "champs_10k": {
+    "Économie": 474.2,
+    "Identité/langue": 488.1,
+    "Environnement": 41.8,
+    "Souveraineté": 69.7,
+    "Social/services": 139.5,
+    "Confrontation": 41.8
+   }
+  },
+  "PQ": {
+   "specificites_ideologiques": {
+    "bleu": 9.16,
+    "internationales": 8.2,
+    "pays": 7.28,
+    "internationale": 7.25,
+    "livre": 7.06,
+    "relations": 5.45,
+    "représentation": 4.43,
+    "feuille": 4.43,
+    "souveraineté": 4.41,
+    "route": 4.06,
+    "laïcité": 4.06,
+    "org": 3.9,
+    "scénario": 3.65,
+    "référendum": 3.1,
+    "porte-parole": 3.03,
+    "indépendant": 2.78,
+    "constitution": 2.76,
+    "économie": 2.69,
+    "premier": 2.57,
+    "monde": 2.0
+   },
+   "champs_10k": {
+    "Économie": 143.1,
+    "Identité/langue": 224.9,
+    "Environnement": 102.2,
+    "Souveraineté": 511.2,
+    "Social/services": 40.9,
+    "Confrontation": 0.0
+   }
+  },
+  "PLQ": {
+   "specificites_ideologiques": {
+    "français": 9.09,
+    "pme": 6.51,
+    "régionaliste": 5.86,
+    "pablo": 5.86,
+    "services": 5.32,
+    "publics": 5.04,
+    "prêt": 5.0,
+    "nationaliste": 4.87,
+    "économie": 4.61,
+    "langue": 4.29,
+    "budget": 4.02,
+    "fédéraliste": 3.96,
+    "française": 3.96,
+    "org": 3.81,
+    "offrir": 3.8,
+    "crois": 3.67,
+    "régions": 3.54,
+    "priorités": 3.25,
+    "plan": 2.73,
+    "coût": 2.69
+   },
+   "champs_10k": {
+    "Économie": 493.4,
+    "Identité/langue": 265.7,
+    "Environnement": 19.0,
+    "Souveraineté": 38.0,
+    "Social/services": 265.7,
+    "Confrontation": 56.9
+   }
+  },
+  "QS": {
+   "specificites_ideologiques": {
+    "manifeste": 7.97,
+    "travailleurs": 7.48,
+    "travailleuses": 6.75,
+    "capable": 6.45,
+    "budgétaire": 5.61,
+    "minimum": 5.22,
+    "constitution": 5.13,
+    "logement": 4.68,
+    "vrai": 3.5,
+    "consultation": 3.42,
+    "monde": 3.31,
+    "économie": 2.99,
+    "seul": 2.86,
+    "qualité": 2.86
+   },
+   "champs_10k": {
+    "Économie": 173.7,
+    "Identité/langue": 0.0,
+    "Environnement": 124.1,
+    "Souveraineté": 248.1,
+    "Social/services": 496.3,
+    "Confrontation": 24.8
+   }
+  },
+  "PCQ": {
+   "specificites_ideologiques": {
+    "autonomie": 8.66,
+    "loi": 8.38,
+    "constitution": 7.7,
+    "national": 6.81,
+    "autonomisme": 5.93,
+    "constitutionnelle": 5.33,
+    "constitutionnel": 4.64,
+    "taxe": 4.64,
+    "québécoise": 4.31,
+    "droit": 3.12,
+    "carbone": 3.07,
+    "souveraineté": 3.0,
+    "mémoire": 2.5,
+    "voix": 2.09
+   },
+   "champs_10k": {
+    "Économie": 239.5,
+    "Identité/langue": 239.5,
+    "Environnement": 79.8,
+    "Souveraineté": 519.0,
+    "Social/services": 119.8,
+    "Confrontation": 20.0
+   }
+  },
+  "Climat Québec": {
+   "specificites_ideologiques": {
+    "climat": 17.7,
+    "stablex": 6.44,
+    "climatique": 6.27,
+    "citoyens": 4.79,
+    "blainville": 4.27,
+    "déchets": 3.29,
+    "gaz": 3.22,
+    "électricité": 2.68,
+    "toxiques": 2.44,
+    "bape": 2.34,
+    "tramway": 2.27,
+    "cheffe": 2.21
+   },
+   "champs_10k": {
+    "Économie": 77.5,
+    "Identité/langue": 14.6,
+    "Environnement": 428.7,
+    "Souveraineté": 74.3,
+    "Social/services": 103.2,
+    "Confrontation": 76.6
+   }
+  }
+ },
+ "cooc_climat_cq": [
+  [
+   "cheffe",
+   155
+  ],
+  [
+   "climat",
+   128
+  ],
+  [
+   "politique",
+   68
+  ],
+  [
+   "candidat",
+   50
+  ],
+  [
+   "indépendantiste",
+   42
+  ],
+  [
+   "citoyens",
+   42
+  ],
+  [
+   "dédié",
+   39
+  ],
+  [
+   "climatique",
+   37
+  ],
+  [
+   "nouveau",
+   37
+  ],
+  [
+   "naturelles",
+   34
+  ],
+  [
+   "blainville",
+   32
+  ],
+  [
+   "ancienne",
+   31
+  ]
+ ],
+ "cooc_indep_cq": [
+  [
+   "climat",
+   22
+  ],
+  [
+   "indépendance",
+   18
+  ],
+  [
+   "idée",
+   10
+  ],
+  [
+   "jean-talon",
+   6
+  ],
+  [
+   "lettre",
+   5
+  ],
+  [
+   "face",
+   5
+  ],
+  [
+   "pensions",
+   5
+  ],
+  [
+   "sérieux",
+   5
+  ],
+  [
+   "robert",
+   5
+  ],
+  [
+   "côté",
+   5
+  ],
+  [
+   "canadien",
+   4
+  ],
+  [
+   "bloc",
+   4
+  ]
+ ]
+}

@@ -1,0 +1,765 @@
+{
+ "partis": {
+  "CAQ": {
+   "richesse": {
+    "tokens": 863,
+    "vocab": 527,
+    "ttr": 0.6107,
+    "hapax_pct": 72.9
+   },
+   "indicateurs_critiques": {
+    "n_mots": 2058,
+    "nous_10k": 228.4,
+    "eux_10k": 111.8,
+    "je_10k": 116.6,
+    "vous_10k": 48.6,
+    "ratio_nous_eux": 2.04,
+    "deontique_10k": 63.2,
+    "proposition_10k": 9.7,
+    "dramatisation_10k": 4.9,
+    "futur_positif_10k": 58.3,
+    "ratio_dramat_futur": 0.08
+   },
+   "specificites_positives": {
+    "discours": 17.05,
+    "fréchette": 12.88,
+    "ouverture": 12.74,
+    "christine": 11.15,
+    "économie": 9.06,
+    "pme": 8.95,
+    "assermentation": 7.58,
+    "identité": 6.81,
+    "immigration": 6.26,
+    "legault": 5.64,
+    "première": 5.57,
+    "clause": 5.29,
+    "laïcité": 5.04,
+    "langue": 4.91,
+    "ministre": 4.61,
+    "quebec": 4.46,
+    "québécois": 4.34,
+    "avril": 4.29,
+    "protéger": 4.19,
+    "femme": 3.81,
+    "avenir": 3.61,
+    "gouvernement": 3.56,
+    "mai": 3.52,
+    "françois": 3.42,
+    "vie": 3.34,
+    "régions": 2.88,
+    "besoin": 2.48,
+    "argent": 2.24
+   },
+   "top_mots": [
+    [
+     "discours",
+     16
+    ],
+    [
+     "québec",
+     15
+    ],
+    [
+     "québécois",
+     13
+    ],
+    [
+     "économie",
+     11
+    ],
+    [
+     "gouvernement",
+     11
+    ],
+    [
+     "ministre",
+     11
+    ],
+    [
+     "fréchette",
+     10
+    ],
+    [
+     "legault",
+     9
+    ],
+    [
+     "ouverture",
+     9
+    ],
+    [
+     "christine",
+     8
+    ],
+    [
+     "première",
+     8
+    ],
+    [
+     "avenir",
+     7
+    ],
+    [
+     "protéger",
+     7
+    ],
+    [
+     "pme",
+     7
+    ],
+    [
+     "avril",
+     6
+    ],
+    [
+     "caq",
+     6
+    ],
+    [
+     "françois",
+     6
+    ],
+    [
+     "vie",
+     6
+    ],
+    [
+     "immigration",
+     5
+    ],
+    [
+     "identité",
+     5
+    ]
+   ]
+  },
+  "PQ": {
+   "richesse": {
+    "tokens": 568,
+    "vocab": 404,
+    "ttr": 0.7113,
+    "hapax_pct": 81.2
+   },
+   "indicateurs_critiques": {
+    "n_mots": 1268,
+    "nous_10k": 181.4,
+    "eux_10k": 55.2,
+    "je_10k": 23.7,
+    "vous_10k": 0.0,
+    "ratio_nous_eux": 3.29,
+    "deontique_10k": 15.8,
+    "proposition_10k": 15.8,
+    "dramatisation_10k": 0.0,
+    "futur_positif_10k": 23.7,
+    "ratio_dramat_futur": 0.0
+   },
+   "specificites_positives": {
+    "bleu": 9.02,
+    "paul": 8.06,
+    "internationales": 8.06,
+    "internationale": 7.09,
+    "pays": 7.04,
+    "livre": 6.93,
+    "décembre": 6.82,
+    "st-pierre": 6.3,
+    "plamondon": 6.01,
+    "relations": 5.34,
+    "session": 5.17,
+    "souveraineté": 4.31,
+    "québécois": 4.0,
+    "constitution": 2.64,
+    "économie": 2.59,
+    "premier": 2.47
+   },
+   "top_mots": [
+    [
+     "québec",
+     16
+    ],
+    [
+     "québécois",
+     10
+    ],
+    [
+     "pays",
+     9
+    ],
+    [
+     "parti",
+     6
+    ],
+    [
+     "internationale",
+     6
+    ],
+    [
+     "décembre",
+     6
+    ],
+    [
+     "paul",
+     5
+    ],
+    [
+     "internationales",
+     5
+    ],
+    [
+     "livre",
+     5
+    ],
+    [
+     "bleu",
+     5
+    ],
+    [
+     "constitution",
+     5
+    ],
+    [
+     "st-pierre",
+     4
+    ],
+    [
+     "plamondon",
+     4
+    ],
+    [
+     "souveraineté",
+     4
+    ],
+    [
+     "relations",
+     4
+    ],
+    [
+     "gouvernement",
+     4
+    ],
+    [
+     "économie",
+     4
+    ],
+    [
+     "premier",
+     4
+    ],
+    [
+     "caq",
+     4
+    ],
+    [
+     "session",
+     4
+    ]
+   ]
+  },
+  "PLQ": {
+   "richesse": {
+    "tokens": 648,
+    "vocab": 430,
+    "ttr": 0.6636,
+    "hapax_pct": 77.9
+   },
+   "indicateurs_critiques": {
+    "n_mots": 1378,
+    "nous_10k": 217.7,
+    "eux_10k": 58.1,
+    "je_10k": 58.1,
+    "vous_10k": 50.8,
+    "ratio_nous_eux": 3.75,
+    "deontique_10k": 29.0,
+    "proposition_10k": 50.8,
+    "dramatisation_10k": 21.8,
+    "futur_positif_10k": 50.8,
+    "ratio_dramat_futur": 0.43
+   },
+   "specificites_positives": {
+    "charles": 22.03,
+    "milliard": 20.43,
+    "plq": 9.08,
+    "français": 8.77,
+    "rodriguez": 7.61,
+    "libéral": 7.13,
+    "pme": 6.25,
+    "année": 5.52,
+    "services": 5.06,
+    "publics": 4.79,
+    "prêt": 4.79,
+    "économie": 4.32,
+    "québécois": 4.21,
+    "langue": 4.08,
+    "budget": 3.82,
+    "juin": 3.8,
+    "offrir": 3.6,
+    "régions": 3.34,
+    "parti": 2.81,
+    "plan": 2.54,
+    "vie": 2.19,
+    "communiqué": 2.13
+   },
+   "top_mots": [
+    [
+     "milliard",
+     14
+    ],
+    [
+     "charles",
+     13
+    ],
+    [
+     "québec",
+     12
+    ],
+    [
+     "parti",
+     11
+    ],
+    [
+     "québécois",
+     11
+    ],
+    [
+     "année",
+     7
+    ],
+    [
+     "plq",
+     7
+    ],
+    [
+     "économie",
+     6
+    ],
+    [
+     "français",
+     6
+    ],
+    [
+     "services",
+     5
+    ],
+    [
+     "publics",
+     5
+    ],
+    [
+     "pme",
+     5
+    ],
+    [
+     "juin",
+     5
+    ],
+    [
+     "gouvernement",
+     5
+    ],
+    [
+     "libéral",
+     5
+    ],
+    [
+     "régions",
+     4
+    ],
+    [
+     "langue",
+     4
+    ],
+    [
+     "communiqué",
+     4
+    ],
+    [
+     "plan",
+     4
+    ],
+    [
+     "vie",
+     4
+    ]
+   ]
+  },
+  "QS": {
+   "richesse": {
+    "tokens": 494,
+    "vocab": 337,
+    "ttr": 0.6822,
+    "hapax_pct": 77.4
+   },
+   "indicateurs_critiques": {
+    "n_mots": 1142,
+    "nous_10k": 96.3,
+    "eux_10k": 43.8,
+    "je_10k": 61.3,
+    "vous_10k": 8.8,
+    "ratio_nous_eux": 2.2,
+    "deontique_10k": 52.5,
+    "proposition_10k": 0.0,
+    "dramatisation_10k": 8.8,
+    "futur_positif_10k": 43.8,
+    "ratio_dramat_futur": 0.2
+   },
+   "specificites_positives": {
+    "solidaire": 17.63,
+    "manifeste": 7.72,
+    "ruba": 7.38,
+    "ghazal": 7.38,
+    "travailleurs": 7.18,
+    "travailleuses": 6.55,
+    "capable": 6.25,
+    "session": 5.41,
+    "constitution": 4.8,
+    "parlementaire": 4.45,
+    "novembre": 4.27,
+    "monde": 3.12,
+    "économie": 2.8,
+    "caq": 2.13
+   },
+   "top_mots": [
+    [
+     "québec",
+     17
+    ],
+    [
+     "solidaire",
+     13
+    ],
+    [
+     "parti",
+     7
+    ],
+    [
+     "constitution",
+     7
+    ],
+    [
+     "travailleurs",
+     6
+    ],
+    [
+     "manifeste",
+     5
+    ],
+    [
+     "caq",
+     5
+    ],
+    [
+     "travailleuses",
+     4
+    ],
+    [
+     "économie",
+     4
+    ],
+    [
+     "ruba",
+     4
+    ],
+    [
+     "ghazal",
+     4
+    ],
+    [
+     "novembre",
+     4
+    ],
+    [
+     "parlementaire",
+     4
+    ],
+    [
+     "session",
+     4
+    ],
+    [
+     "capable",
+     4
+    ],
+    [
+     "monde",
+     4
+    ],
+    [
+     "seul",
+     3
+    ],
+    [
+     "qualité",
+     3
+    ],
+    [
+     "vie",
+     3
+    ],
+    [
+     "logement",
+     3
+    ]
+   ]
+  },
+  "PCQ": {
+   "richesse": {
+    "tokens": 612,
+    "vocab": 424,
+    "ttr": 0.6928,
+    "hapax_pct": 82.3
+   },
+   "indicateurs_critiques": {
+    "n_mots": 1293,
+    "nous_10k": 92.8,
+    "eux_10k": 38.7,
+    "je_10k": 46.4,
+    "vous_10k": 85.1,
+    "ratio_nous_eux": 2.4,
+    "deontique_10k": 15.5,
+    "proposition_10k": 0.0,
+    "dramatisation_10k": 0.0,
+    "futur_positif_10k": 0.0,
+    "ratio_dramat_futur": 0.0
+   },
+   "specificites_positives": {
+    "pcq": 16.31,
+    "duhaime": 11.95,
+    "éric": 10.99,
+    "autonomie": 8.36,
+    "loi": 7.9,
+    "constitution": 7.24,
+    "conservateur": 6.77,
+    "national": 6.56,
+    "février": 5.29,
+    "article": 4.5,
+    "congrès": 4.18,
+    "québécoise": 4.07,
+    "discours": 3.76,
+    "octobre": 3.02,
+    "droit": 2.93,
+    "parti": 2.49,
+    "québécois": 2.49
+   },
+   "top_mots": [
+    [
+     "québec",
+     22
+    ],
+    [
+     "pcq",
+     10
+    ],
+    [
+     "loi",
+     10
+    ],
+    [
+     "parti",
+     10
+    ],
+    [
+     "constitution",
+     10
+    ],
+    [
+     "québécois",
+     8
+    ],
+    [
+     "éric",
+     7
+    ],
+    [
+     "duhaime",
+     7
+    ],
+    [
+     "autonomie",
+     6
+    ],
+    [
+     "projet",
+     6
+    ],
+    [
+     "discours",
+     5
+    ],
+    [
+     "conservateur",
+     5
+    ],
+    [
+     "québécoise",
+     5
+    ],
+    [
+     "national",
+     5
+    ],
+    [
+     "février",
+     5
+    ],
+    [
+     "article",
+     4
+    ],
+    [
+     "droit",
+     4
+    ],
+    [
+     "octobre",
+     4
+    ],
+    [
+     "congrès",
+     4
+    ],
+    [
+     "souveraineté",
+     3
+    ]
+   ]
+  },
+  "Climat Québec": {
+   "richesse": {
+    "tokens": 48371,
+    "vocab": 9408,
+    "ttr": 0.1945,
+    "hapax_pct": 47.6
+   },
+   "indicateurs_critiques": {
+    "n_mots": 96836,
+    "nous_10k": 90.6,
+    "eux_10k": 66.2,
+    "je_10k": 22.8,
+    "vous_10k": 6.8,
+    "ratio_nous_eux": 1.37,
+    "deontique_10k": 33.7,
+    "proposition_10k": 15.5,
+    "dramatisation_10k": 26.0,
+    "futur_positif_10k": 15.6,
+    "ratio_dramat_futur": 1.67
+   },
+   "specificites_positives": {
+    "climat": 19.66,
+    "ouellet": 11.71,
+    "martine": 11.62,
+    "stablex": 7.16,
+    "climatique": 6.97,
+    "citoyens": 5.41,
+    "blainville": 4.74,
+    "déchets": 3.66,
+    "gaz": 3.58,
+    "électricité": 3.05,
+    "toxiques": 2.72,
+    "bape": 2.61,
+    "cheffe": 2.57,
+    "tramway": 2.52,
+    "territoire": 2.25,
+    "transport": 2.22,
+    "candidat": 2.08,
+    "ressources": 2.08,
+    "commun": 2.05,
+    "ville": 2.02,
+    "droit": -2.04,
+    "créer": -2.05,
+    "annonce": -2.12,
+    "aspirations": -2.17,
+    "besoin": -2.17,
+    "retrouve": -2.17,
+    "juridique": -2.17,
+    "feuille": -2.17,
+    "avance": -2.17,
+    "représentation": -2.17
+   },
+   "top_mots": [
+    [
+     "québec",
+     1277
+    ],
+    [
+     "climat",
+     705
+    ],
+    [
+     "ouellet",
+     421
+    ],
+    [
+     "martine",
+     418
+    ],
+    [
+     "projet",
+     280
+    ],
+    [
+     "parti",
+     260
+    ],
+    [
+     "stablex",
+     258
+    ],
+    [
+     "climatique",
+     251
+    ],
+    [
+     "citoyens",
+     238
+    ],
+    [
+     "politique",
+     199
+    ],
+    [
+     "blainville",
+     171
+    ],
+    [
+     "québécois",
+     162
+    ],
+    [
+     "gouvernement",
+     158
+    ],
+    [
+     "cheffe",
+     156
+    ],
+    [
+     "électricité",
+     146
+    ],
+    [
+     "déchets",
+     132
+    ],
+    [
+     "crise",
+     130
+    ],
+    [
+     "gaz",
+     129
+    ],
+    [
+     "face",
+     124
+    ],
+    [
+     "canada",
+     124
+    ]
+   ]
+  }
+ },
+ "meta": {
+  "glob_total_tokens": 51556,
+  "n_partis": 6
+ }
+}
