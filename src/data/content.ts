@@ -43,6 +43,8 @@ export interface Actualite {
   titre: string;
   extrait: string;
   source: string;
+  lien?: string;
+  image?: string;
 }
 
 export interface VersionContent {
@@ -160,30 +162,98 @@ export const DOSSIERS: Dossier[] = [
 export const ACTUALITES: Actualite[] = [
   {
     date: "15 juillet 2026",
-    titre: "Jean-Claude St-André sera candidat dans Gouin",
-    extrait:
-      "L'ancien député de L'Assomption et militant indépendantiste de longue date porte les couleurs de Climat Québec dans Gouin.",
+    titre: "Jean-Claude St-André sera candidat pour Climat Québec dans Gouin",
+    extrait: "Montréal, le mercredi 15 juillet 2026 – Climat Québec est heureux d’annoncer la candidature de Jean-Claude St-André sous sa bannière",
+    lien: "https://climat.quebec/2026/07/15/jean-claude-st-andre-sera-candidat-pour-climat-quebec-dans-gouin/",
+    image: "https://climat.quebec/wp-content/uploads/2026/07/ok.jpeg",
     source: "climat.quebec",
   },
   {
     date: "6 juillet 2026",
-    titre: "10 nouveaux candidats se joignent à l'équipe",
-    extrait:
-      "Climat Québec poursuit sa lancée avec de nouvelles candidatures régionales pour l'élection du 5 octobre.",
+    titre: "Climat Québec poursuit sa lancée : 10 nouveaux candidats se joignent à l’équipe de Martine Ouellet",
+    extrait: "Montréal, le lundi 6 juillet 2026 — Le parti Climat Québec annonce aujourd’hui dix nouvelles candidatures qui viendront grossir les rangs",
+    lien: "https://climat.quebec/2026/07/06/climat-quebec-poursuit-sa-lancee-10-nouveaux-candidats-se-joignent-a-lequipe-de-martine-ouellet/",
+    image: "https://climat.quebec/wp-content/uploads/2026/07/Gemini_Generated_Image_z1rj5cz1rj5cz1rj.png",
+    source: "climat.quebec",
+  },
+  {
+    date: "21 juin 2026",
+    titre: "Encore des méga-éoliennes privées…",
+    extrait: "Publication de Climat Québec. Cliquez pour lire l’article complet sur le site officiel.",
+    lien: "https://climat.quebec/2026/06/21/encore-des-mega-eoliennes-privees/",
+    image: "https://climat.quebec/wp-content/uploads/2026/06/Gemini_Generated_Image_pvrsyfpvrsyfpvrs-e1782084670267.png",
+    source: "climat.quebec",
+  },
+  {
+    date: "20 juin 2026",
+    titre: "À la vigie contre Stablex !",
+    extrait: "Publication de Climat Québec. Cliquez pour lire l’article complet sur le site officiel.",
+    lien: "https://climat.quebec/2026/06/20/a-la-vigie-contre-stablex/",
+    image: "https://climat.quebec/wp-content/uploads/2026/06/Gemini_Generated_Image_y82691y82691y826-e1782084800824.png",
+    source: "climat.quebec",
+  },
+  {
+    date: "19 juin 2026",
+    titre: "À l’Assemblée nationale pendant le bâillon !",
+    extrait: "Publication de Climat Québec. Cliquez pour lire l’article complet sur le site officiel.",
+    lien: "https://climat.quebec/2026/06/19/a-lassemblee-nationale-pendant-le-baillon/",
+    image: "https://climat.quebec/wp-content/uploads/2026/06/Gemini_Generated_Image_u1aerku1aerku1ae-e1782085056141.png",
     source: "climat.quebec",
   },
   {
     date: "12 juin 2026",
-    titre: "Stablex : une contamination confirmée",
-    extrait:
-      "Une nouvelle campagne d'échantillonnage indépendante confirme une contamination dans le secteur de la Grande Tourbière de Blainville.",
+    titre: "COMMUNIQUÉ | Stablex : une nouvelle campagne d’échantillonnage indépendante confirme une contamination",
+    extrait: "Montréal, vendredi le 12 juin 2026 — Climat Québec et la Coalition des citoyens de Blainville contre Stablex rendent publics",
+    lien: "https://climat.quebec/2026/06/12/communique-stablex-une-nouvelle-campagne-dechantillonnage-independante-confirme-une-contamination/",
+    image: "https://climat.quebec/wp-content/uploads/2026/06/20260612_1147272.jpg",
+    source: "climat.quebec",
+  },
+  {
+    date: "1 juin 2026",
+    titre: "COMMUNIQUÉ | Jean Cloutier se lance pour Climat Québec",
+    extrait: "Deschambault-Grondines, lundi le 1 juin 2026 — Martine Ouellet, cheffe de Climat Québec, est fière d’annoncer la candidature de Jean",
+    lien: "https://climat.quebec/2026/06/01/communique-jean-cloutier-se-lance-pour-climat-quebec/",
+    image: "https://climat.quebec/wp-content/uploads/2026/06/IMG_7691-e1782020279313.jpeg",
+    source: "climat.quebec",
+  },
+  {
+    date: "29 avril 2026",
+    titre: "COMMUNIQUÉ | On se doit de protéger les citoyens, pas l’industrie",
+    extrait: "Consultation sur les déchets dangereux de la CMM Climat Québec et la Coalition des citoyens de Blainville contre la cellule",
+    lien: "https://climat.quebec/2026/04/29/communique-on-se-doit-de-proteger-les-citoyens-pas-lindustrie/",
+    image: "https://climat.quebec/wp-content/uploads/2026/04/pollution-concept-factory-emisions.jpg",
+    source: "climat.quebec",
+  },
+  {
+    date: "26 avril 2026",
+    titre: "LETTRE | Madame Fréchette, ne signez pas cette entente désastreuse pour le Québec",
+    extrait: "Il vous reste quelques jours. L’échéance du 30 avril approche et avec elle, la pression de signer l’entente de principe",
+    lien: "https://climat.quebec/2026/04/26/lettre-madame-frechette-ne-signez-pas-cette-entente-desastreuse-pour-le-quebec/",
+    image: "https://climat.quebec/wp-content/uploads/2026/04/unnamed-e1782019895223.jpg",
+    source: "climat.quebec",
+  },
+  {
+    date: "10 avril 2026",
+    titre: "LETTRE | Réponse à la propagande de TES Canada",
+    extrait: "La réaction agressive d’Éric Gauthier, pdg de TES Canada et ancien cadre de Power Corporation, en dit long. Son attaque",
+    lien: "https://climat.quebec/2026/04/10/lettre-reponse-a-la-propagande-de-tes-canada/",
+    image: "https://climat.quebec/wp-content/uploads/2026/04/670424876_1609576630527179_5865939179980815445_n-e1777320854148.jpg",
     source: "climat.quebec",
   },
   {
     date: "3 avril 2026",
-    titre: "Martine Ouellet choisit Champlain et lance un mouvement dans 10 régions",
-    extrait:
-      "La cheffe annonce 15 candidatures et un déploiement dans dix régions du Québec.",
+    titre: "Martine Ouellet choisit Champlain, lance un mouvement dans 10 régions du Québec et annonce 15 candidatures",
+    extrait: "Trois-Rivières, vendredi le 3er avril 2026 – Climat Québec est fier d’annoncer aujourd’hui les 16 premières candidatures de son équipe",
+    lien: "https://climat.quebec/2026/04/03/martine-ouellet-choisit-champlain-lance-un-mouvement-dans-10-regions-du-quebec-et-annonce-15-candidatures/",
+    image: "https://climat.quebec/wp-content/uploads/2026/04/1281.jpg",
+    source: "climat.quebec",
+  },
+  {
+    date: "17 février 2026",
+    titre: "Climat Québec propose le Train des Bleuets",
+    extrait: "Un projet rassembleur pour propulser le Saguenay–Lac-Saint-Jean vers l’avenir Chicoutimi, mardi le 17 février 2026 — En pleine élection partielle",
+    lien: "https://climat.quebec/2026/02/17/climat-quebec-propose-le-train-des-bleuets/",
+    image: "https://climat.quebec/wp-content/uploads/2026/02/Capture-decran-2026-02-18-075258.png",
     source: "climat.quebec",
   },
 ];
