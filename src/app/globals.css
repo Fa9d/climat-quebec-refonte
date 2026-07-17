@@ -19,6 +19,9 @@
   --eau-400: #4a93ad;
   --creme: #f7f4ec;        /* surface claire crème */
   --creme-2: #efe9dc;
+  --lilas: #ad38e2;        /* violet-magenta (accent secondaire, accueil) */
+  --lilas-fond: #efd7f9;   /* lilas pâle (fonds de blocs) */
+  --lilas-fond-2: #e8cff8;
 
   /* Tokens sémantiques — MODE CLAIR (défaut) */
   --background: #f7f4ec;
@@ -32,6 +35,8 @@
   --accent: var(--vif-600);
   --accent-fg: #06301d;
   --secondary: var(--eau);
+  --tertiary: var(--lilas);
+  --tertiary-fond: var(--lilas-fond);
   --ring: var(--vif-600);
   --hero-overlay: linear-gradient(
     180deg,
@@ -54,6 +59,8 @@
   --accent: #34d17e;
   --accent-fg: #04241a;
   --secondary: #4a93ad;
+  --tertiary: #c774ee;
+  --tertiary-fond: rgba(173, 56, 226, 0.16);
   --ring: #34d17e;
   --hero-overlay: linear-gradient(
     180deg,
@@ -75,6 +82,9 @@
   --color-accent: var(--accent);
   --color-accent-fg: var(--accent-fg);
   --color-secondary: var(--secondary);
+  --color-tertiary: var(--tertiary);
+  --color-tertiary-fond: var(--tertiary-fond);
+  --color-lilas: var(--lilas);
   --color-foret: var(--foret);
   --color-eau: var(--eau);
   --color-vif: var(--vif);
