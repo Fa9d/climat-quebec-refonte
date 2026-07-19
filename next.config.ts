@@ -1,10 +1,14 @@
 import type { NextConfig } from "next";
 
-// BASE_PATH : /climat en prod/Vercel, vide en dev local
-const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? "/climat";
-const isDev = process.env.NODE_ENV === "development";
+// DEPLOY_TARGET=static -> build statique pour VPS (génère out/)
+// NODE_ENV=development -> dev local sans basePath
+// sinon -> Vercel dynamic
+const isStatic = process.env.DEPLOY_TARGET === "static";
+const isDev    = process.env.NODE_ENV === "development";
+const basePath = "/climat";
 
 const nextConfig: NextConfig = {
+  ...(isStatic ? { output: "export" } : {}),
   basePath: isDev ? "" : basePath,
   assetPrefix: isDev ? "" : basePath,
   trailingSlash: true,
