@@ -1,15 +1,16 @@
 import { NextRequest, NextResponse } from "next/server";
 import { createClient } from "@supabase/supabase-js";
 
-// Force la route en mode dynamique — exclue du build statique (output: export)
-export const dynamic = "force-dynamic";
-
 export async function POST(req: NextRequest) {
-  // Client instancié dans la fonction pour éviter l'erreur au build
-  const supabase = createClient(
-    process.env.NEXT_PUBLIC_SUPABASE_URL!,
-    process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!
-  );
+  // Client instancié dans la fonction — ne plante pas si les env vars sont absentes au build
+  const supabaseUrl  = process.env.NEXT_PUBLIC_SUPABASE_URL;
+  const supabaseKey  = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
+
+  if (!supabaseUrl || !supabaseKey) {
+    return NextResponse.json({ error: "Configuration serveur manquante." }, { status: 503 });
+  }
+
+  const supabase = createClient(supabaseUrl, supabaseKey);
 
   try {
     const body = await req.json();
@@ -32,7 +33,6 @@ export async function POST(req: NextRequest) {
       consentement:    "public-nomme" | "public-anonyme" | "interne-seulement";
     };
 
-    // Validation serveur
     if (
       !nomOuPseudonyme?.trim() ||
       !dossierSlug ||
