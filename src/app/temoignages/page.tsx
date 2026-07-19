@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { createClient } from "@/lib/supabase/client";
+import { supabase } from "@/lib/supabase/client";
 import Reveal from "@/components/reveal";
 import { Kicker } from "@/components/ui";
 import Link from "next/link";
@@ -18,10 +18,8 @@ type Temoignage = {
 export default function TemoignagesPage() {
   const [temoignages, setTemoignages] = useState<Temoignage[]>([]);
   const [loading, setLoading] = useState(true);
-  const supabase = createClient();
 
   useEffect(() => {
-    // Chargement initial
     const fetchTemoignages = async () => {
       const { data, error } = await supabase
         .from("temoignages_publics")
@@ -35,7 +33,6 @@ export default function TemoignagesPage() {
 
     fetchTemoignages();
 
-    // Écoute temps réel — nouveaux témoignages validés
     const channel = supabase
       .channel("temoignages-publics-changes")
       .on(
@@ -61,7 +58,7 @@ export default function TemoignagesPage() {
     return () => {
       supabase.removeChannel(channel);
     };
-  }, [supabase]);
+  }, []);
 
   const formatDate = (iso: string) =>
     new Date(iso).toLocaleDateString("fr-CA", {

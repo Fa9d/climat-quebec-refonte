@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { createClient } from "@/lib/supabase/client";
+import { supabase } from "@/lib/supabase/client";
 import Reveal from "@/components/reveal";
 import Link from "next/link";
 
@@ -16,10 +16,9 @@ type Temoignage = {
 export function TemoignagesDossier({ slug }: { slug: string }) {
   const [temoignages, setTemoignages] = useState<Temoignage[]>([]);
   const [loading, setLoading] = useState(true);
-  const supabase = createClient();
 
   useEffect(() => {
-    const fetch = async () => {
+    const fetchData = async () => {
       const { data, error } = await supabase
         .from("temoignages_publics")
         .select("id, prenom, ville, message, created_at")
@@ -30,7 +29,7 @@ export function TemoignagesDossier({ slug }: { slug: string }) {
       if (!error && data) setTemoignages(data);
       setLoading(false);
     };
-    fetch();
+    fetchData();
 
     const channel = supabase
       .channel(`temoignages-dossier-${slug}`)
@@ -56,7 +55,7 @@ export function TemoignagesDossier({ slug }: { slug: string }) {
     return () => {
       supabase.removeChannel(channel);
     };
-  }, [slug, supabase]);
+  }, [slug]);
 
   if (loading)
     return (

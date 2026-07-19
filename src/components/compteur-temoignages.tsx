@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import { createClient } from "@/lib/supabase/client";
+import { supabase } from "@/lib/supabase/client";
 import Link from "next/link";
 
 function useCountUp(target: number, duration = 1200) {
@@ -13,9 +13,7 @@ function useCountUp(target: number, duration = 1200) {
     const start = performance.now();
     const animate = (now: number) => {
       const progress = Math.min((now - start) / duration, 1);
-      // easeOutExpo
-      const eased =
-        progress === 1 ? 1 : 1 - Math.pow(2, -10 * progress);
+      const eased = progress === 1 ? 1 : 1 - Math.pow(2, -10 * progress);
       setCount(Math.round(eased * target));
       if (progress < 1) rafRef.current = requestAnimationFrame(animate);
     };
@@ -31,10 +29,8 @@ function useCountUp(target: number, duration = 1200) {
 export function CompteurTemoignages() {
   const [total, setTotal] = useState(0);
   const displayed = useCountUp(total);
-  const supabase = createClient();
 
   useEffect(() => {
-    // Compte initial
     const fetchCount = async () => {
       const { count } = await supabase
         .from("temoignages_publics")
@@ -43,7 +39,6 @@ export function CompteurTemoignages() {
     };
     fetchCount();
 
-    // Temps réel
     const channel = supabase
       .channel("compteur-temoignages")
       .on(
@@ -63,7 +58,7 @@ export function CompteurTemoignages() {
     return () => {
       supabase.removeChannel(channel);
     };
-  }, [supabase]);
+  }, []);
 
   if (total === 0) return null;
 
@@ -75,9 +70,7 @@ export function CompteurTemoignages() {
             {displayed.toLocaleString("fr-CA")}
           </p>
           <p className="mt-2 text-lg font-semibold text-foreground">
-            {total === 1
-              ? "citoyen a témoigné"
-              : "citoyens ont témoigné"}
+            {total === 1 ? "citoyen a témoigné" : "citoyens ont témoigné"}
           </p>
           <p className="mt-1 text-sm text-muted">
             Témoignages vérifiés, intégrés à nos dossiers.
