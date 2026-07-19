@@ -8,10 +8,11 @@ import Link from "next/link";
 
 type Temoignage = {
   id: string;
-  prenom: string | null;
-  ville: string | null;
-  message: string;
+  auteur_affiche: string | null;  // nom public ou "Anonyme" selon consentement
+  lieu_precis: string | null;
+  description: string;
   dossier_slug: string | null;
+  date_observation: string;
   created_at: string;
 };
 
@@ -23,10 +24,11 @@ export default function TemoignagesPage() {
     const fetchTemoignages = async () => {
       const { data, error } = await supabase
         .from("temoignages_publics")
-        .select("id, prenom, ville, message, dossier_slug, created_at")
+        .select("id, auteur_affiche, lieu_precis, description, impact_concret, dossier_slug, date_observation, created_at")
         .order("created_at", { ascending: false })
         .limit(100);
 
+      if (error) console.error("[temoignages]", error);
       if (!error && data) setTemoignages(data);
       setLoading(false);
     };
@@ -45,7 +47,7 @@ export default function TemoignagesPage() {
         },
         (payload) => {
           const nouveau = payload.new as Temoignage;
-          if (!nouveau.message) return;
+          if (!nouveau.description) return;
           setTemoignages((prev) => {
             const exists = prev.find((t) => t.id === nouveau.id);
             if (exists) return prev;
@@ -145,7 +147,7 @@ export default function TemoignagesPage() {
               >
                 <blockquote>
                   <p className="text-base leading-relaxed text-foreground sm:text-lg">
-                    &ldquo;{t.message}&rdquo;
+                    &ldquo;{t.description}&rdquo;
                   </p>
                 </blockquote>
                 <footer className="mt-4 flex flex-wrap items-center justify-between gap-2">
@@ -154,14 +156,14 @@ export default function TemoignagesPage() {
                       className="flex h-8 w-8 items-center justify-center rounded-full bg-accent/15 text-xs font-bold text-accent"
                       aria-hidden="true"
                     >
-                      {(t.prenom ?? "A")[0].toUpperCase()}
+                      {(t.auteur_affiche ?? "A")[0].toUpperCase()}
                     </div>
                     <div>
                       <p className="text-sm font-semibold text-foreground">
-                        {t.prenom ?? "Anonyme"}
-                        {t.ville ? (
+                        {t.auteur_affiche ?? "Anonyme"}
+                        {t.lieu_precis ? (
                           <span className="font-normal text-muted">
-                            {" "}&mdash; {t.ville}
+                            {" "}&mdash; {t.lieu_precis}
                           </span>
                         ) : null}
                       </p>
@@ -176,10 +178,10 @@ export default function TemoignagesPage() {
                     </div>
                   </div>
                   <time
-                    dateTime={t.created_at}
+                    dateTime={t.date_observation}
                     className="text-xs text-muted"
                   >
-                    {formatDate(t.created_at)}
+                    {formatDate(t.date_observation)}
                   </time>
                 </footer>
               </Reveal>
