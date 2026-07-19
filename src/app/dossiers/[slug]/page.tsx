@@ -4,6 +4,7 @@ import Link from "next/link";
 import { getDossierComplet, DOSSIERS_COMPLETS } from "@/data/dossiers-enrichis";
 import { DossierDetail } from "@/components/dossier-detail";
 import { CtaBanner } from "@/components/ui";
+import { TemoignagesDossier } from "@/components/temoignages-dossier";
 
 // ─────────────────────────────────────────────
 // Génération statique des slugs
@@ -61,6 +62,11 @@ export default async function DossierPage(
 
       {/* Composant principal avec onglets */}
       <DossierDetail dossier={dossier} />
+
+      {/* Témoignages citoyens liés à ce dossier */}
+      <div className="mx-auto max-w-5xl px-5 py-16 sm:px-8">
+        <TemoignagesDossier slug={slug} />
+      </div>
 
       <CtaBanner />
     </>
