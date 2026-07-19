@@ -6,6 +6,7 @@ import { useVersion } from "@/components/providers";
 import Reveal from "@/components/reveal";
 import { Kicker, StatutBadge, CtaBanner } from "@/components/ui";
 import { assetPath } from "@/lib/asset-path";
+import { CompteurTemoignages } from "@/components/compteur-temoignages";
 import {
   DOSSIERS,
   CANDIDATS,
@@ -192,6 +193,9 @@ export default function Home() {
           <span aria-hidden="true">→</span>
         </Link>
       </section>
+
+      {/* ===================== COMPTEUR TÉMOIGNAGES (temps réel) ===================== */}
+      <CompteurTemoignages />
 
       {/* ===================== BANDEAU CANDIDATS (bleu eau) ===================== */}
       <section className="grain-eau text-white">
