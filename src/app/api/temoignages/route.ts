@@ -1,10 +1,8 @@
 import { NextRequest, NextResponse } from "next/server";
 import { createClient } from "@supabase/supabase-js";
-import type { Database } from "@/lib/supabase/database.types";
 
-// Client service-role : utilisé uniquement côté serveur pour bypasser RLS si nécessaire.
-// Ici on insère en tant qu'anon — la policy RLS `insert_public` suffit.
-const supabase = createClient<Database>(
+// Client anon côté serveur — la policy RLS `insert_public` suffit.
+const supabase = createClient(
   process.env.NEXT_PUBLIC_SUPABASE_URL!,
   process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!
 );
@@ -31,7 +29,7 @@ export async function POST(req: NextRequest) {
       consentement:    "public-nomme" | "public-anonyme" | "interne-seulement";
     };
 
-    // Validation serveur (double sécurité après la validation client)
+    // Validation serveur
     if (
       !nomOuPseudonyme?.trim() ||
       !dossierSlug ||
@@ -47,7 +45,8 @@ export async function POST(req: NextRequest) {
       );
     }
 
-    const { error } = await supabase
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    const { error } = await (supabase as any)
       .from("temoignages")
       .insert({
         nom_ou_pseudonyme: nomOuPseudonyme.trim(),
@@ -62,7 +61,7 @@ export async function POST(req: NextRequest) {
     if (error) {
       console.error("[temoignages] Supabase insert error:", error);
       return NextResponse.json(
-        { error: "Erreur lors de l’enregistrement. Veuillez réessayer." },
+        { error: "Erreur lors de l'enregistrement. Veuillez réessayer." },
         { status: 500 }
       );
     }
