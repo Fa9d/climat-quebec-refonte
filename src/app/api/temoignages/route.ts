@@ -1,13 +1,16 @@
 import { NextRequest, NextResponse } from "next/server";
 import { createClient } from "@supabase/supabase-js";
 
-// Client anon côté serveur — la policy RLS `insert_public` suffit.
-const supabase = createClient(
-  process.env.NEXT_PUBLIC_SUPABASE_URL!,
-  process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!
-);
+// Force la route en mode dynamique — exclue du build statique (output: export)
+export const dynamic = "force-dynamic";
 
 export async function POST(req: NextRequest) {
+  // Client instancié dans la fonction pour éviter l'erreur au build
+  const supabase = createClient(
+    process.env.NEXT_PUBLIC_SUPABASE_URL!,
+    process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!
+  );
+
   try {
     const body = await req.json();
 
